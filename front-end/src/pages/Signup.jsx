@@ -1,53 +1,41 @@
 import { Link, useNavigate } from 'react-router-dom';
 import signupImg from '../assets/images/signup.gif';
 import { useState } from 'react';
-import { BASE_URL } from "../config";
 import { toast } from 'react-toastify';
 import HashLoader from 'react-spinners/HashLoader';
+import instance from '../utils/http';
 
 const Signup = () => {
-
-  const [formData, setFormData] = useState(
-    {
-      name: '',
-      email: '',
-      password: '',
-      gender: '',
-      role: 'patient',
-    }
-  );
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    gender: '',
+    role: 'patient',
+  });
 
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
+  };
 
-  const submitHandler = async e => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch(`${BASE_URL}/auth/register`, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-      const { message } = await res.json();
-      if (!res.ok) {
-        throw new Error(message);
-      }
+      const res = await instance.post(`auth/register`, formData);
+      const { message } = await res.data;
       setLoading(false);
       toast.success(message);
-      navigate("/login");
+      navigate('/login');
     } catch (error) {
-      toast.error(error.message);
+      const errorMessage = error.response?.data?.message || error.message;
+      toast.error(errorMessage);
       setLoading(false);
     }
-  }
-
+  };
 
   return (
     <section className="px-5 xl:px-0">
@@ -58,55 +46,56 @@ const Signup = () => {
               <img src={signupImg} className="w-full rounded-l-lg" alt="" />
             </figure>
           </div>
-          <div className='rounded-l-lg lg:pl-16 py-10'>
-            <h3 className='text-headingColor text-[22px] leading-9 font-bold mb-10 px-[30px] lg:px-0'>
-              Create an <span className='text-primaryColor'>account</span>
+          <div className="rounded-l-lg lg:pl-16 py-10">
+            <h3 className="text-headingColor text-[22px] leading-9 font-bold mb-10 px-[30px] lg:px-0">
+              Create an <span className="text-primaryColor">account</span>
             </h3>
             <form>
-              <div className='mb-5 px-[30px] lg:px-0'>
+              <div className="mb-5 px-[30px] lg:px-0">
                 <input
-                  type='text'
-                  placeholder='Full Name'
+                  type="text"
+                  placeholder="Full Name"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none
+                  className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none
                   focus:border-b-primaryColor text-[16px] leading-7 text-headingColor rounded-md shadow-md
-                  cursor-pointer placeholder:text-textColor'
+                  cursor-pointer placeholder:text-textColor"
                   required
                 />
               </div>
-              <div className='mb-5 px-[30px] lg:px-0'>
+              <div className="mb-5 px-[30px] lg:px-0">
                 <input
-                  type='email'
-                  placeholder='Enter your email'
+                  type="email"
+                  placeholder="Enter your email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none
+                  className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none
                   focus:border-b-primaryColor text-[16px] leading-7 text-headingColor rounded-md shadow-md
-                  cursor-pointer placeholder:text-textColor'
+                  cursor-pointer placeholder:text-textColor"
                   required
                 />
               </div>
-              <div className='mb-5 px-[30px] lg:px-0'>
+              <div className="mb-5 px-[30px] lg:px-0">
                 <input
-                  type='password'
-                  placeholder='Password'
+                  type="password"
+                  placeholder="Password"
                   name="password"
                   value={formData.password}
                   onChange={handleInputChange}
-                  className='w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none
+                  className="w-full px-4 py-3 border-b border-solid border-[#0066ff61] focus:outline-none
                   focus:border-b-primaryColor text-[16px] leading-7 text-headingColor rounded-md shadow-md
-                  cursor-pointer placeholder:text-textColor'
+                  cursor-pointer placeholder:text-textColor"
                   required
                 />
               </div>
-              <div className='mb-5 px-[30px] lg:px-0'>
-                <label className='text-headingColor font-bold text-[16px] leading-7'>
+              <div className="mb-5 px-[30px] lg:px-0">
+                <label className="text-headingColor font-bold text-[16px] leading-7">
                   Gender:
-                  <select name="gender"
-                    className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none'
+                  <select
+                    name="gender"
+                    className="text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none"
                     value={formData.gender}
                     onChange={handleInputChange}
                   >
@@ -117,28 +106,28 @@ const Signup = () => {
                   </select>
                 </label>
               </div>
-              <div className='mt-7 px-[30px] lg:px-0'>
+              <div className="mt-7 px-[30px] lg:px-0">
                 <button
                   disabled={loading && true}
-                  type='submit'
-                  className='w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3'
+                  type="submit"
+                  className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3"
                   onClick={submitHandler}
                 >
-                  {loading ? <HashLoader size={35} color="#ffffff" /> : "Sign up"}
+                  {loading ? <HashLoader size={35} color="#ffffff" /> : 'Sign up'}
                 </button>
               </div>
-              <p className='mt-5 text-textColor text-center'>
+              <p className="mt-5 text-textColor text-center">
                 Already have an account?
-                <Link to='/login' className='text-primaryColor font-medium ml-1'>
+                <Link to="/login" className="text-primaryColor font-medium ml-1">
                   Login
                 </Link>
               </p>
             </form>
           </div>
         </div>
-      </div >
-    </section >
-  )
-}
+      </div>
+    </section>
+  );
+};
 
-export default Signup
+export default Signup;

@@ -7,7 +7,7 @@ import { HiStar } from 'react-icons/hi';
 
 const Testimonial = () => {
   return (
-    <div className='mt-[30px] lg:mt-[55px]'>
+    <div className="mt-[30px] lg:mt-[55px]">
       <Swiper
         modules={[Pagination]}
         spaceBetween={30}
@@ -25,127 +25,112 @@ const Testimonial = () => {
           1024: {
             slidesPerView: 3,
             spaceBetween: 30,
-          }
+          },
         }}
       >
         <SwiperSlide>
-          <div className='py-[30px] px-5 rounded-3'>
-            <div className='flex items-center gap-[13px]'>
+          <div className="py-[30px] px-5 rounded-3">
+            <div className="flex items-center gap-[13px]">
               <img src={patientAvatar} alt="" />
               <div>
-                <h4 className='text-[18px] leading-[30px] font-semibold text-headingColor'>
-                  The Hoang
-                </h4>
-                <div className='flex items-center gap-[2px]'>
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
+                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">The Hoang</h4>
+                <div className="flex items-center gap-[2px]">
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
                 </div>
               </div>
             </div>
-            <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>
-              &quot;I have taken medical services from them. They treat so well and
-              they are providing the best medical services.&quot;
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              &quot;I have taken medical services from them. They treat so well and they are providing the best medical services.&quot;
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='py-[30px] px-5 rounded-3'>
-            <div className='flex items-center gap-[13px]'>
+          <div className="py-[30px] px-5 rounded-3">
+            <div className="flex items-center gap-[13px]">
               <img src={patientAvatar} alt="" />
               <div>
-                <h4 className='text-[18px] leading-[30px] font-semibold text-headingColor'>
-                  Quoc Viet
-                </h4>
-                <div className='flex items-center gap-[2px]'>
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
+                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">Quoc Viet</h4>
+                <div className="flex items-center gap-[2px]">
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
                 </div>
               </div>
             </div>
-            <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>
-              &quot;I have taken medical services from them. They treat so well and
-              they are providing the best medical services.&quot;
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              &quot;I have taken medical services from them. They treat so well and they are providing the best medical services.&quot;
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='py-[30px] px-5 rounded-3'>
-            <div className='flex items-center gap-[13px]'>
+          <div className="py-[30px] px-5 rounded-3">
+            <div className="flex items-center gap-[13px]">
               <img src={patientAvatar} alt="" />
               <div>
-                <h4 className='text-[18px] leading-[30px] font-semibold text-headingColor'>
-                  Hong Anh
-                </h4>
-                <div className='flex items-center gap-[2px]'>
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
+                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">Hong Anh</h4>
+                <div className="flex items-center gap-[2px]">
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
                 </div>
               </div>
             </div>
-            <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>
-              &quot;I have taken medical services from them. They treat so well and
-              they are providing the best medical services.&quot;
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              &quot;I have taken medical services from them. They treat so well and they are providing the best medical services.&quot;
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='py-[30px] px-5 rounded-3'>
-            <div className='flex items-center gap-[13px]'>
+          <div className="py-[30px] px-5 rounded-3">
+            <div className="flex items-center gap-[13px]">
               <img src={patientAvatar} alt="" />
               <div>
-                <h4 className='text-[18px] leading-[30px] font-semibold text-headingColor'>
-                  Bao Phong
-                </h4>
-                <div className='flex items-center gap-[2px]'>
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
+                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">Bao Phong</h4>
+                <div className="flex items-center gap-[2px]">
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
                 </div>
               </div>
             </div>
-            <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>
-              &quot;I have taken medical services from them. They treat so well and
-              they are providing the best medical services.&quot;
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              &quot;I have taken medical services from them. They treat so well and they are providing the best medical services.&quot;
             </p>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='py-[30px] px-5 rounded-3'>
-            <div className='flex items-center gap-[13px]'>
+          <div className="py-[30px] px-5 rounded-3">
+            <div className="flex items-center gap-[13px]">
               <img src={patientAvatar} alt="" />
               <div>
-                <h4 className='text-[18px] leading-[30px] font-semibold text-headingColor'>
-                  Ngoc Thien
-                </h4>
-                <div className='flex items-center gap-[2px]'>
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
-                  <HiStar className='text-yellowColor w-[18px] h-5' />
+                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">Ngoc Thien</h4>
+                <div className="flex items-center gap-[2px]">
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
+                  <HiStar className="text-yellowColor w-[18px] h-5" />
                 </div>
               </div>
             </div>
-            <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>
-              &quot;I have taken medical services from them. They treat so well and
-              they are providing the best medical services.&quot;
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+              &quot;I have taken medical services from them. They treat so well and they are providing the best medical services.&quot;
             </p>
           </div>
         </SwiperSlide>
       </Swiper>
     </div>
-  )
-}
+  );
+};
 
-export default Testimonial
+export default Testimonial;
